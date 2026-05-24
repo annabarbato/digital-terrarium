@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terrarium v1.0</title>
+  </head>
+  <body>
+    <main id="app" class="desktop-shell">
+      <section class="terrarium-window" aria-label="Digital Terrarium">
+        <header class="title-bar">
+          <span class="title-text">TERRARIUM v1.0</span>
+          <span class="window-buttons" aria-hidden="true">
+            <span class="window-button">_</span>
+            <span class="window-button">□</span>
+            <span class="window-button">×</span>
+          </span>
+        </header>
+        <div class="workspace">
+          <div class="canvas-wrap">
+            <canvas id="terrarium" width="640" height="480" aria-label="Autonomous pixel ecosystem"></canvas>
+            <div id="mutationTicker" class="mutation-ticker" aria-live="polite"></div>
+          </div>
+          <aside id="statsPanel" class="stats-panel" aria-label="Ecosystem stats">
+            <div class="panel-section">
+              <div class="stat-row"><span>PLANTS</span><strong data-stat="plants">0</strong></div>
+              <div class="stat-row"><span>HERBIVORES</span><strong data-stat="herbivores">0</strong></div>
+              <div class="stat-row"><span>PREDATORS</span><strong data-stat="predators">0</strong></div>
+              <div class="stat-row"><span>LIFESPAN</span><strong data-stat="lifespan">0s</strong></div>
+              <div class="stat-row"><span>DIVERSITY</span><strong data-stat="diversity">0</strong></div>
+              <div class="stat-row"><span>HEALTH</span><strong data-stat="health">stable</strong></div>
+              <div class="stat-row"><span>TIME</span><strong data-stat="elapsed">00:00</strong></div>
+            </div>
+            <div class="panel-section controls" aria-label="Controls">
+              <button type="button" data-action="togglePause">PAUSE</button>
+              <label>
+                SPEED
+                <select data-action="speed">
+                  <option value="1">1x</option>
+                  <option value="2">2x</option>
+                  <option value="4">4x</option>
+                </select>
+              </label>
+              <label>
+                MODE
+                <select data-action="mode">
+                  <option value="observe">Observe</option>
+                  <option value="hardmode">Hardmode</option>
+                  <option value="sandbox">Sandbox</option>
+                </select>
+              </label>
+              <button type="button" data-action="reset">RESET</button>
+              <button type="button" data-action="clear">CLEAR</button>
+              <button type="button" data-action="snapshot">SNAPSHOT</button>
+              <button type="button" data-action="export">EXPORT JSON</button>
+            </div>
+            <ol id="historyLog" class="history-log" aria-label="Ecosystem history"></ol>
+          </aside>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

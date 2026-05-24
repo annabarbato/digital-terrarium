@@ -1,0 +1,15 @@
+{
+  "name": "digital-terrarium",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "vite": "^8.0.14",
+    "vitest": "^4.1.7"
+  }
+}
